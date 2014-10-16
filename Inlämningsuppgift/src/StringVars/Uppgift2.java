@@ -44,3 +44,9 @@ public class StringVars {
          */
     }
 }
+
+/*
+Tack!
+Snygg och enkel kod som fungerar.
+Det hade blivit ännu kortare och i vissa fall enklare med en for-loop istället.
+*/
