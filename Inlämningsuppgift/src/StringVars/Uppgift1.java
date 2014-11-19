@@ -31,3 +31,14 @@ public class Uppgift1 {
         System.out.println("Välkommen " + first_name + ", då du fyller den " + civic_number.substring(2, 6) + " kommer vi komma till dig, " + address + " och fira dig."
     }
 }
+<<<<<<< HEAD
+=======
+
+/*
+Tack!
+
+Det ser bra ut och du har löst uppgiften som det är tänkt!
+Lösningen är enkel och lätt att följa.
+
+*/
+>>>>>>> bc69b703ad5e6acce5f3b8d4d095777659c71d9c
