@@ -6,7 +6,7 @@ import java.util.Scanner;
  *
  * @author Patrik
  */
-public class StringVars {
+public class Uppgift2 {
     public static void main(String[] args) {
         Scanner user_input = new Scanner(System.in);
         
