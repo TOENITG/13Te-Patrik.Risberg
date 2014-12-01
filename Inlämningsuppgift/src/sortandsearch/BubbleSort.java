@@ -51,11 +51,11 @@ public class BubbleSort {
 	}
 
 	public static int[] getArray(){
-		int size=100000;
+		int size=100;
 		int []array = new int[size];
 		int item = 0;
 		for(int i=0;i<size;i++){
-			item = (int)(Math.random()*100); 
+			item = (int)(Math.random()*1000); 
 			array[i] = item;
 		}
 		return array;
