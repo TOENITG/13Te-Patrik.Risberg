@@ -57,7 +57,7 @@ public class Uppgift4 {
 		printBoard();
 		place();
 		AIplace();
-		System.out.println("Enter your moves in the form 'C4'");
+		System.out.println("Skriv dina drag utifrån modellen 'C4'");
 		while(!win)
 			move();
 	}
@@ -119,14 +119,14 @@ public class Uppgift4 {
 				else if((int)input.charAt(5) != 72 && (int)input.charAt(5) != 86){
 					System.out.println("Ogiltig riktning. Försök igen.");
 				}
-				else{   //Valid Input
+				else{   //Giltig Input
 					if((int)input.charAt(5) == 72 && (((int)input.charAt(0)-48) + 1) > (7 - ((int)input.charAt(3)-48))){
 						System.out.println("Ogiltig horisontell placering. Inte nog med plats.");
 					}
 					else if((int)input.charAt(5) == 86 && (((int)input.charAt(0)-48) + 1) > (7 - ((int)input.charAt(2) - 64))){
 						System.out.println("Ogiltig vertikal placering. Inte nog med plats.");
 					}
-					else{ //Valid Placement, except for overlap
+					else{ //Giltig placering, förutom överlappning
 						if(((int)input.charAt(0)-48) == 1){
 							placeBoard(input.charAt(5), sub, input.substring(2,4));
 						}
