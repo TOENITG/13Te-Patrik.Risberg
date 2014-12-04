@@ -4,19 +4,27 @@ import java.util.Random;
 public class Uppgift4 {
 
 	private Scanner in;
-	private boardPiece[][] pboard = {{new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece()},
-									{new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece()},
-									{new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece()},
-									{new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece()},
-									{new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece()},
-									{new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece()}};
+	private boardPiece[][] pboard = {{new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece()},
+									{new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece()},
+									{new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece()},
+									{new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece()},
+									{new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece()},
+                                                                        {new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece()},
+                                                                        {new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece()},
+                                                                        {new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece()},
+                                                                        {new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece()},
+									{new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece()}};
 	
-	private boardPiece[][] eboard = {{new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece()},
-									{new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece()},
-									{new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece()},
-									{new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece()},
-									{new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece()},
-									{new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece()}};
+	private boardPiece[][] eboard = {{new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece()},
+									{new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece()},
+									{new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece()},
+									{new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece()},
+									{new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece()},
+                                                                        {new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece()},
+                                                                        {new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece()},
+                                                                        {new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece()},
+                                                                        {new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece()},
+									{new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece(),new boardPiece()}};
 	
 	private char turn = 'X';
 	private boolean win = false;
@@ -63,16 +71,16 @@ public class Uppgift4 {
 	}
 	
 	public void printBoard(){
-		System.out.println("           FIENDE                         SPELARE");
-		System.out.println("   1   2   3   4   5   6          1   2   3   4   5   6");
-		for(int x=0; x<6; x++){
+		System.out.println("                   FIENDE                                         SPELARE");
+		System.out.println("   1   2   3   4   5   6   7   8   9  10          1   2   3   4   5   6   7   8   9  10");
+		for(int x=0; x<10; x++){
 			System.out.print((char)(65+x) + " ");
-			for(int y=0; y<6; y++){
+			for(int y=0; y<10; y++){
 				System.out.print(eboard[x][y].piece);
 			}
 			System.out.print("     ");
 			System.out.print((char)(65+x) + " ");
-			for(int z=0; z<6; z++){
+			for(int z=0; z<10; z++){
 				System.out.print(pboard[x][z].piece);
 			}
 			System.out.println();
@@ -106,35 +114,35 @@ public class Uppgift4 {
 					System.out.println("Ogiltig Input. Försök igen.");
 				}
 			}
-			else if(input.length() == 6){
+			else if(input.length() == 10){
 				if(((int)input.charAt(0)-48) >= 4){
 					System.out.println("Ogiltig skeppstyp. Försök igen.");
 				}
-				else if(((int)input.charAt(2)-65) >= 6){
+				else if(((int)input.charAt(2)-65) >= 10){
 					System.out.println("Ogiltig rad. Försök igen.");
 				}
-				else if(((int)input.charAt(3)-48) >= 7){
+				else if(((int)input.charAt(3)-48) >= 11){
 					System.out.println("Ogiltig kolumn. Försök igen.");
 				}
-				else if((int)input.charAt(5) != 72 && (int)input.charAt(5) != 86){
+				else if((int)input.charAt(5) != 72 && (int)input.charAt(9) != 86){
 					System.out.println("Ogiltig riktning. Försök igen.");
 				}
 				else{   //Giltig Input
-					if((int)input.charAt(5) == 72 && (((int)input.charAt(0)-48) + 1) > (7 - ((int)input.charAt(3)-48))){
+					if((int)input.charAt(5) == 72 && (((int)input.charAt(0)-48) + 1) > (11 - ((int)input.charAt(3)-48))){
 						System.out.println("Ogiltig horisontell placering. Inte nog med plats.");
 					}
-					else if((int)input.charAt(5) == 86 && (((int)input.charAt(0)-48) + 1) > (7 - ((int)input.charAt(2) - 64))){
+					else if((int)input.charAt(5) == 86 && (((int)input.charAt(0)-48) + 1) > (11 - ((int)input.charAt(2) - 64))){
 						System.out.println("Ogiltig vertikal placering. Inte nog med plats.");
 					}
 					else{ //Giltig placering, förutom överlappning
 						if(((int)input.charAt(0)-48) == 1){
-							placeBoard(input.charAt(5), sub, input.substring(2,4));
+							placeBoard(input.charAt(9), sub, input.substring(2,4));
 						}
 						else if(((int)input.charAt(0)-48) == 2){
-							placeBoard(input.charAt(5), destroyer, input.substring(2,4));
+							placeBoard(input.charAt(9), destroyer, input.substring(2,4));
 						}
 						else{
-							placeBoard(input.charAt(5), battleship, input.substring(2,4));
+							placeBoard(input.charAt(9), battleship, input.substring(2,4));
 						}
 					}
 				}
@@ -177,8 +185,8 @@ public class Uppgift4 {
 			flag = false;
 			while(!flag){
 				int a = generator.nextInt(2);
-				int b = generator.nextInt(6);
-				int c = generator.nextInt(6);
+				int b = generator.nextInt(10);
+				int c = generator.nextInt(10);
 				if(a == 0)
 					a = 72;
 				else
@@ -186,10 +194,10 @@ public class Uppgift4 {
 				b += 65;
 				c += 49;
 				
-				if(a == 72 && (x + 1) > (7 - (c-48))){
+				if(a == 72 && (x + 1) > (11 - (c-48))){
 					//inte bra, försök igen
 				}
-				else if(a == 86 && (x + 1) > (7 - (b-64))){
+				else if(a == 86 && (x + 1) > (11 - (b-64))){
 					//inte bra, försök igen
 				}
 				else{ //Giltig placering, förutom överlappning
@@ -347,10 +355,10 @@ public boolean AIplaceBoard(char layout, ship current, String locale){
 	
 	public String checkMove(String move){
 		
-		if(((int)move.charAt(0)-65) >= 6)
-			return "Ogiltig rad. Kan endast vara A-F. Välj annat drag: ";	
-		if(((int)move.charAt(1)-48) >= 7)
-			return "Ogiltig kolumn. Kan endast vara 1-6. Välj annat drag: ";
+		if(((int)move.charAt(0)-65) >= 10)
+			return "Ogiltig rad. Kan endast vara A-J. Välj annat drag: ";	
+		if(((int)move.charAt(1)-48) >= 11)
+			return "Ogiltig kolumn. Kan endast vara 1-10. Välj annat drag: ";
 		if(turn == 'X'){
 			if(eboard[((int)move.charAt(0)-65)][((int)move.charAt(1)-49)].selected)  
 				return "Redan vald. Välj annat drag: ";
@@ -408,8 +416,8 @@ public boolean AIplaceBoard(char layout, ship current, String locale){
 			if(turn == 'X'){
 				int stype = eboard[((int)move.charAt(0)-65)][((int)move.charAt(1)-49)].type;
 				
-				for(int x=0;x<6;x++){
-					for(int y=0;y<6;y++){
+				for(int x=0;x<10;x++){
+					for(int y=0;y<10;y++){
 						if(eboard[x][y].selected && eboard[x][y].type == stype)
 							counter++;
 					}
@@ -434,8 +442,8 @@ public boolean AIplaceBoard(char layout, ship current, String locale){
 			else{
 				int stype = pboard[((int)move.charAt(0)-65)][((int)move.charAt(1)-49)].type;
 				
-				for(int x=0;x<6;x++){
-					for(int y=0;y<6;y++){
+				for(int x=0;x<10;x++){
+					for(int y=0;y<10;y++){
 						if(pboard[x][y].selected && pboard[x][y].type == stype)
 							counter++;
 					}
@@ -443,7 +451,7 @@ public boolean AIplaceBoard(char layout, ship current, String locale){
 				if(counter == (stype + 1)){
 					String xship = "";
 					if(stype == 1){
-						xship = "ubåt
+						xship = "ubåt";
 						sub.destroyed = true;
 					}
 					else if(stype == 2){
@@ -477,8 +485,8 @@ public boolean AIplaceBoard(char layout, ship current, String locale){
 	}
 	
 	public void init(){
-		  for(int x=0;x<6;x++){
-			  for(int y=0;y<6;y++){
+		  for(int x=0;x<10;x++){
+			  for(int y=0;y<10;y++){
 				  eboard[x][y] = new boardPiece();
 				  pboard[x][y] = new boardPiece();
 			  }			 
@@ -499,8 +507,8 @@ public boolean AIplaceBoard(char layout, ship current, String locale){
 		int y = 0;
 		
 		if(AI.count<1 || (AI.himi == 'M' && AI.himi2 == 'M') || AI.error){
-			x = generator.nextInt(6);
-		    y = generator.nextInt(6);
+			x = generator.nextInt(10);
+		    y = generator.nextInt(10);
 			x += 65;
 			y += 49;
 			AI.error = false;
