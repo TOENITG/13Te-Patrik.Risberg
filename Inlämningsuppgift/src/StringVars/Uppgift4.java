@@ -1,3 +1,10 @@
+package StringVars;
+
+/**
+ *
+ * @author Patrik
+ */
+
 import java.util.Scanner;
 import java.util.Random;
 
