@@ -80,14 +80,14 @@ public class SänkaSkepp {
 	public void printBoard(){
 		System.out.println("                   FIENDE                                         SPELARE");
 		System.out.println("   1   2   3   4   5   6   7   8   9  10          1   2   3   4   5   6   7   8   9  10");
-		for(int x=0; x<10; x++){
+		for(int x=0; x<9; x++){
 			System.out.print((char)(65+x) + " ");
-			for(int y=0; y<10; y++){
+			for(int y=0; y<9; y++){
 				System.out.print(eboard[x][y].piece);
 			}
 			System.out.print("     ");
 			System.out.print((char)(65+x) + " ");
-			for(int z=0; z<10; z++){
+			for(int z=0; z<9; z++){
 				System.out.print(pboard[x][z].piece);
 			}
 			System.out.println();
@@ -96,12 +96,12 @@ public class SänkaSkepp {
 	
 	public void place(){
 		System.out.println();
-		System.out.println("Placera dina skepp på brädet");
+		System.out.println("Välkommen till sänka skepp!\nPlacera dina skepp på brädet");
 		System.out.println("Du har 3 skepp:  1: 2-plats Ubåt, 2: 3-plats Jagare, 3: 4-plats Slagskepp");
 		System.out.println("Välj först numret av skeppet du vill placera. " +
 				           "Sedan väljer du första kordinaten av där du vill placera det, exempel 'C4'.");
-		System.out.println("Sedan väljer du riktning, H=horisontell, V=vertikal");
-		System.out.println("Till exempel, '2 B5 V', sen trycker du på ENTER.");
+		System.out.println("Sedan väljer du riktning, H=horisontell, V=vertikal\n");
+		System.out.println("Till exempel, '2 B5 V', sen trycker du på ENTER.\n");
 		System.out.println("När du är klar med att placera skriver du in 'S' för att börja.");
 		
 		String input = "";
@@ -121,17 +121,17 @@ public class SänkaSkepp {
 					System.out.println("Ogiltig Input. Försök igen.");
 				}
 			}
-			else if(input.length() == 10){
+			else if(input.length() == 9){
 				if(((int)input.charAt(0)-48) >= 4){
 					System.out.println("Ogiltig skeppstyp. Försök igen.");
 				}
-				else if(((int)input.charAt(2)-65) >= 10){
+				else if(((int)input.charAt(2)-65) >= 11){
 					System.out.println("Ogiltig rad. Försök igen.");
 				}
 				else if(((int)input.charAt(3)-48) >= 11){
 					System.out.println("Ogiltig kolumn. Försök igen.");
 				}
-				else if((int)input.charAt(5) != 72 && (int)input.charAt(9) != 86){
+				else if((int)input.charAt(5) != 72 && (int)input.charAt(5) != 86){
 					System.out.println("Ogiltig riktning. Försök igen.");
 				}
 				else{   //Giltig Input
@@ -143,13 +143,13 @@ public class SänkaSkepp {
 					}
 					else{ //Giltig placering, förutom överlappning
 						if(((int)input.charAt(0)-48) == 1){
-							placeBoard(input.charAt(9), sub, input.substring(2,4));
+							placeBoard(input.charAt(5), sub, input.substring(2,4));
 						}
 						else if(((int)input.charAt(0)-48) == 2){
-							placeBoard(input.charAt(9), destroyer, input.substring(2,4));
+							placeBoard(input.charAt(5), destroyer, input.substring(2,4));
 						}
 						else{
-							placeBoard(input.charAt(9), battleship, input.substring(2,4));
+							placeBoard(input.charAt(5), battleship, input.substring(2,4));
 						}
 					}
 				}
@@ -192,8 +192,8 @@ public class SänkaSkepp {
 			flag = false;
 			while(!flag){
 				int a = generator.nextInt(2);
-				int b = generator.nextInt(10);
-				int c = generator.nextInt(10);
+				int b = generator.nextInt(6);
+				int c = generator.nextInt(6);
 				if(a == 0)
 					a = 72;
 				else
@@ -201,10 +201,10 @@ public class SänkaSkepp {
 				b += 65;
 				c += 49;
 				
-				if(a == 72 && (x + 1) > (11 - (c-48))){
+				if(a == 72 && (x + 1) > (7 - (c-48))){
 					//inte bra, försök igen
 				}
-				else if(a == 86 && (x + 1) > (11 - (b-64))){
+				else if(a == 86 && (x + 1) > (7 - (b-64))){
 					//inte bra, försök igen
 				}
 				else{ //Giltig placering, förutom överlappning
@@ -362,9 +362,9 @@ public boolean AIplaceBoard(char layout, ship current, String locale){
 	
 	public String checkMove(String move){
 		
-		if(((int)move.charAt(0)-65) >= 10)
+		if(((int)move.charAt(0)-65) >= 9)
 			return "Ogiltig rad. Kan endast vara A-J. Välj annat drag: ";	
-		if(((int)move.charAt(1)-48) >= 11)
+		if(((int)move.charAt(1)-48) >= 9)
 			return "Ogiltig kolumn. Kan endast vara 1-10. Välj annat drag: ";
 		if(turn == 'X'){
 			if(eboard[((int)move.charAt(0)-65)][((int)move.charAt(1)-49)].selected)  
@@ -423,8 +423,8 @@ public boolean AIplaceBoard(char layout, ship current, String locale){
 			if(turn == 'X'){
 				int stype = eboard[((int)move.charAt(0)-65)][((int)move.charAt(1)-49)].type;
 				
-				for(int x=0;x<10;x++){
-					for(int y=0;y<10;y++){
+				for(int x=0;x<9;x++){
+					for(int y=0;y<9;y++){
 						if(eboard[x][y].selected && eboard[x][y].type == stype)
 							counter++;
 					}
@@ -449,8 +449,8 @@ public boolean AIplaceBoard(char layout, ship current, String locale){
 			else{
 				int stype = pboard[((int)move.charAt(0)-65)][((int)move.charAt(1)-49)].type;
 				
-				for(int x=0;x<10;x++){
-					for(int y=0;y<10;y++){
+				for(int x=0;x<9;x++){
+					for(int y=0;y<9;y++){
 						if(pboard[x][y].selected && pboard[x][y].type == stype)
 							counter++;
 					}
@@ -492,8 +492,8 @@ public boolean AIplaceBoard(char layout, ship current, String locale){
 	}
 	
 	public void init(){
-		  for(int x=0;x<10;x++){
-			  for(int y=0;y<10;y++){
+		  for(int x=0;x<9;x++){
+			  for(int y=0;y<9;y++){
 				  eboard[x][y] = new boardPiece();
 				  pboard[x][y] = new boardPiece();
 			  }			 
@@ -514,8 +514,8 @@ public boolean AIplaceBoard(char layout, ship current, String locale){
 		int y = 0;
 		
 		if(AI.count<1 || (AI.himi == 'M' && AI.himi2 == 'M') || AI.error){
-			x = generator.nextInt(10);
-		    y = generator.nextInt(10);
+			x = generator.nextInt(6);
+		    y = generator.nextInt(6);
 			x += 65;
 			y += 49;
 			AI.error = false;

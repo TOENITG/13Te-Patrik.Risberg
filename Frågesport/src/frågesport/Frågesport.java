@@ -1,4 +1,4 @@
-package StringVars;
+package Frågesport;
 
 /**
  *
@@ -7,10 +7,14 @@ package StringVars;
 
 import java.util.Scanner;
 
-public class Uppgift5Fragesport {
+public class Frågesport {
+    
+    static Scanner user_input = new Scanner(System.in);
+    
+    String svar;
+    if (svar.equalsignorecase(rättsvar));
     
     public static void main(String[] args) {
-        Scanner user_input = new Scanner(System.in);
         
         String play;
         
@@ -25,6 +29,14 @@ public class Uppgift5Fragesport {
         
         else {
             System.out.println("\nJamen du då drar vi igång!\n\n");
+        }
+        
+        System.out.println("Första frågan har vi här:\n");
+        System.out.println("Who's that boy?");
+        System.out.println("A: Batman, B: Juan Carlos, C: Carlito, D: Johannes");
+        
+        
+            
         }
     }
     
